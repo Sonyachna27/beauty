@@ -1157,8 +1157,6 @@ hr {
 }
 .reviews__slide img {
   width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
   border-radius: 10px;
   margin: auto 0;
 }
