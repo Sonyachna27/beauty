@@ -1,0 +1,46 @@
+.relax{
+	&__title{
+		max-width: 900px;
+		text-align: center;
+		h2{
+			max-width: 600px;
+		}
+	}
+	&-slide{
+		max-height: 430px;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		border-radius: 15px;
+		&:before{
+			content: '';
+			width: 34.617px;
+			height: 59.877px;
+			flex-shrink: 0;
+			background: url('../images/relax-svg.svg') center center / cover no-repeat;
+			margin: 0 auto;
+			margin-bottom: -30px;
+			position: relative;
+			z-index: 1;
+		}
+		&.odd  {
+			transform: rotate(-3deg);
+			&:before{
+				transform: rotate(-12deg);
+			}
+		}
+		&.even  {
+			transform: rotate(3deg);
+			&:before{
+				transform: rotate(18deg);
+			}
+		}
+		img{
+			max-height: 400px;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 15px;
+			width: calc(100% + 15px);
+		}
+	}
+}

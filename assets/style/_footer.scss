@@ -1,0 +1,220 @@
+.footer{
+	background-color: #171717;
+	&__top{
+		padding: 100px 0;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 40px;
+		flex-direction: column;
+		@media screen and (min-width:1240px) {
+			gap: 160px;
+		}
+		@media screen and (min-width:1024px) {
+			flex-direction: row;
+			
+		}
+		@media screen and (min-width:1024px) and (max-width:1239.9px) {
+			gap: 100px;
+		}
+	}
+	&__logo{
+		width: 100%;
+		color: $--white;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		@media screen and (min-width:1024px) {
+			max-width: 250px;
+		}
+		@media screen and (max-width:1023.9px) {
+		text-align: center;
+		align-items: center;
+		}
+		.logo{
+			max-width: fit-content;
+			max-height: fit-content;
+		
+		}
+		& p{
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: 0.18px;
+			strong{
+				font-weight: 800;
+			}
+		}
+
+	}
+	&__wrap{
+		display: flex;
+		gap: 30px;
+		flex-direction: column;
+		width: 100%;
+		justify-content: space-evenly;
+		@media screen and (min-width:1240px) {
+			width: 65%;
+			gap: 160px;
+		}
+		@media screen and (min-width:1024px) {
+		flex-direction: row;
+		
+		}
+		@media screen and (min-width:1024px) and (max-width:1239.9px) {
+			gap: 100px;
+		}
+		nav{
+		
+				& ul{
+					display: flex;
+					gap: 30px;
+					flex-direction: column;
+					width: fit-content;
+					@media screen and (min-width:1240px) {
+						gap: 60px 160px;
+					}
+					@media screen and (min-width:1024px) {
+						flex-direction: row;
+						flex-wrap: wrap;
+					}
+					@media screen and (min-width:1024px) and (max-width:1239.9px) {
+						gap: 100px;
+					}
+					li{
+						display: flex;
+						flex-direction: column;
+						gap: 30px;
+						a:not(.sub-menu li a){
+							color: $--white;
+							font-size: 24px;
+							font-style: normal;
+							font-weight: 700;
+							line-height: normal;
+					}
+					}
+					.sub-menu{
+						display: flex;
+						flex-direction: column;
+						gap: 20px;
+						li{
+							width: 100%;
+						}
+						li a{
+							transition: .3s linear;
+							font-size: 18px;
+							font-style: normal;
+							font-weight: 500;
+							line-height: normal;
+							letter-spacing: 0.18px;
+							max-width: 110px;
+							width: 100%;
+							&:hover{
+								color: $--pink;
+							}
+						}
+					}
+				}
+			}
+	}
+	&__block{
+		display: flex;
+		gap: 30px;
+		flex-direction: column;
+		@media screen and (min-width:1024px) {
+			max-width: 300px;
+		}
+		&__title{
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			color: $--white;
+		}
+	}
+	&__contact{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		color: $--white;
+		align-items: flex-start;
+		width: fit-content;
+		a:hover{
+			color: $--pink;
+		}
+		
+	}
+	&__socials{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		gap: 20px;
+		flex-direction: column;
+		padding: 50px 0;
+		border-top:1px solid rgba(255, 255, 255, 0.10);
+		border-bottom:1px solid rgba(255, 255, 255, 0.10);
+		@media screen and (min-width:1024px) {
+			flex-direction: row;
+			align-items: center;
+		}
+		a{
+			display: flex;
+			width: fit-content;
+			gap: 14px;
+			align-items: center;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+			text-transform: uppercase;
+			transition: .3s linear;
+			&:hover{
+				color: $--pink;
+				rect{
+					fill: $--pink;
+				}
+				path{
+					fill: $--white;
+				}
+			}
+			svg{
+				width: 40px;
+				height: 40px;
+				path{
+					transition: .3s linear;
+				}
+			}
+		}
+	}
+	&__copy{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		flex-direction: column;
+		color: $--white;
+		padding: 30px 0 20px 0;
+		color: #C5C5C5;
+		font-family: "Qanelas";
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%;
+		@media  screen and (min-width:768px) {
+			flex-direction: row;
+		}
+		p{
+			@media screen and (max-width:767.9px) {
+			text-align: center;	
+			}
+		}
+		.lumios{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: fit-content;
+			gap: 15px;
+		}
+	}
+}

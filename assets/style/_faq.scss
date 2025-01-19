@@ -1,0 +1,124 @@
+.faq{
+	background-color: $--bg-gradient;
+	&__container{
+		display: flex;
+		align-items: flex-start;
+		gap: 50px;
+		flex-direction: column;
+		@media screen and (min-width:1024px) {
+			flex-direction: row;
+		}
+	}
+	&__title{
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		h2{
+			@include titleH2;
+		}
+		@media screen and (min-width:1024px) {
+			width: 38%;
+		}
+	}
+	&__items{
+		width: 100%;
+		@media screen and (min-width:1024px) {
+			width: 61%;
+		}
+
+	}
+	&__item{
+		padding: 35px 0;
+		opacity: .7;
+		border-bottom:1px solid  rgba(255, 255, 255, 0.20);
+		&.active{
+			opacity: 1;
+		}
+		&__top{
+			gap: 15px;
+			&:hover{
+				.faq__item__top__count{
+					background-color: $--pink;
+					opacity: 1;
+					border-color: $--pink;
+
+				}
+				.faq-icon-wrapper{
+					background-color: $--pink;
+					border-color: $--pink;
+				}
+			}
+			&__count{
+				border-radius: 500px;
+				padding: 4px 15px;
+				border: 1px solid $--white;
+				max-width: fit-content;
+				width: 100%;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: normal;
+				letter-spacing: 0.16px;
+				transition: .3s linear;
+			}
+			p{
+				font-size: 16px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: normal;
+				letter-spacing: 0.2px;
+				@media screen and (min-width:768px) {
+					font-size: 20px;
+				}
+			}
+			
+		}
+		&.active{
+			.faq__item__top__count{
+				background-color: $--pink;
+				opacity: 1;
+				border-color: $--pink;
+
+			}
+			.faq-icon-wrapper{
+				background-color: $--pink;
+				border-color: $--pink;
+				&:after{
+					transform: rotate(180deg);
+				}
+			}
+		}
+		&__bottom{
+			font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%; /* 27px */
+		letter-spacing: 0.36px;
+		@media screen and (min-width:768px) {
+			font-size: 18px;
+		}
+		}
+	}
+	&-icon-wrapper{
+			min-width: 30px;
+			min-height: 30px;	
+			border-radius: 50%;
+			border: 1px solid $--white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: auto;
+			transition: .3s linear;
+			@media screen and (min-width:768px) {
+				width: 40px;
+				height: 40px;	
+			}
+			&::after{
+				transition: .3s linear;
+				content: '';
+				width: 13px;
+				height: 13px;
+				background: url('../images/btn-arrow-white.svg') center center / cover no-repeat;
+			}
+	}
+}

@@ -1,0 +1,28 @@
+.reviews{
+	&__slide{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px;
+		border-radius: 10px;
+		background: #353535;
+		height: 380px;
+		overflow: hidden;
+		overflow-y: auto;
+		& img{
+			width: 100%;
+			height: fit-content;
+			border-radius: 10px;
+		}
+	}
+	&-pagination.swiper-pagination-progressbar{
+		bottom: 0;
+		top: inherit;
+		.swiper-pagination-progressbar-fill{
+			background: $--pink;
+		}
+	}
+	.reviewsSlider{
+		padding-bottom: 40px;
+	}
+}

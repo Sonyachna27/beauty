@@ -1,0 +1,18 @@
+.works{
+	&__slide{
+		border-top: 10px solid #FBFBFB;
+		border-right: 10px solid #FBFBFB;
+		border-bottom: 40px solid #FBFBFB;
+		border-left: 10px solid #FBFBFB;
+	}
+	&-pagination.swiper-pagination-progressbar{
+		bottom: 0;
+		top: inherit;
+		.swiper-pagination-progressbar-fill{
+			background: $--pink;
+		}
+	}
+	.worksSlider{
+		padding-bottom: 40px;
+	}
+}
