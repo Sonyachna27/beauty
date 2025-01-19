@@ -986,8 +986,8 @@ hr {
   right: 0;
   border-radius: inherit;
   z-index: 2;
-  opacity: 0.4;
-  background: linear-gradient(0deg, rgba(23, 23, 23, 0.7) 0%, rgba(23, 23, 23, 0.7) 100%) lightgray 50%/cover no-repeat;
+  opacity: 0.8;
+  background: rgba(23, 23, 23, 0.8);
 }
 .services__item__img {
   position: absolute;
