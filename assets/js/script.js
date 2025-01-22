@@ -302,4 +302,24 @@ const prettyScroll = () => {
 	});
 };
 
+$(document).ready(function() {
+  // Ініціалізуємо кожен блок окремо
+  $(".team__item__img").each(function() {
+    const $slideshow = $(this); // Отримуємо поточний блок
+    
+    // Ініціалізація слайдера для кожного блоку
+    $slideshow.cycle({
+      timeout: 0, // Вимикаємо автоматичну зміну слайдів
+      fx: 'fade', // Ефект переходу (за бажанням)
+    });
+    
+    // Знаходимо кнопку всередині батьківського блоку
+    const $nextButton = $slideshow.closest(".team__item").find(".next-button");
+    
+    // Прив'язуємо кнопку до відповідного слайдшоу
+    $nextButton.on("click", function() {
+      $slideshow.cycle("next"); // Перемикаємо на наступний слайд
+    });
+  });
+});
 
