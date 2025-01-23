@@ -1088,7 +1088,7 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-4.053deg);
   position: absolute;
-  z-index: 1;
+  z-index: 5;
 }
 @media screen and (max-width: 768px) {
   .team__item__experience {
@@ -1121,6 +1121,10 @@ hr {
   border-radius: 15px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.team__item__img a {
+  border-radius: 15px;
+  width: 100%;
 }
 .team__item__info {
   padding: 20px;
