@@ -139,6 +139,8 @@
 				line-height: 180%;
 				opacity: .9;
 				border-radius: 10px;
+				outline: none;
+				border: none;
 				&::placeholder{
 					color: rgba(19, 19, 19, 0.50);
 				font-size: 14px;
@@ -154,6 +156,38 @@
 			& .btn{
 				max-width: 100%;
 			}
+			position: relative;
+			.wpcf7-response-output{
+				color: #FFF;
+					font-size: 12px;
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					border-radius: 5px;
+					background-color: #00E417;
+					padding: 5px;
+					width: fit-content;
+					height: auto;
+					border-color: none;
+					margin: 0;
+					margin-top: 20px;
+				
+			}
+			.wpcf7-not-valid-tip{
+				position: absolute;
+				top: 2px;
+				right: 2px;
+			}
+		
 		}
+		
+		
 	}
 }
+.wpcf7 form.invalid .wpcf7-response-output,
+		 .wpcf7 form.unaccepted .wpcf7-response-output, 
+		 .wpcf7 form.payment-required .wpcf7-response-output{
+			background-color: #F00;
+			border-color: transparent;
+		 }
+		
