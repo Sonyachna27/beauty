@@ -1,113 +1,123 @@
 .services{
 	background: $--bg-gradient;
+	&__title{
+		gap: 5px;
+		max-width: 650px;
+		p{
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 170%; /* 34px */
+			letter-spacing: 0.4px;
+			opacity: 0.8;
+		}
+	}
 	&__container{
 		display: flex;
 		gap: 20px;
 		flex-wrap: wrap;
-		@media screen and (min-width:768px) {
-			gap: 40px;
-		}
+	// display: grid;
+	// grid-template-columns: repeat(4, 1fr);
 	}
 	&__item{
-		border-radius: 100px 15px 15px 15px;
-		
 		position: relative;
-		z-index: 2;
-		aspect-ratio: 1;
 		display: flex;
-		align-items: flex-end;
-		padding: 20px;
+		flex-direction: column;
 		transition: .3s linear;
 		width: 100%;
-		@media screen and (min-width:768px) {
-			border-radius: 200px 30px 30px 30px;
-			aspect-ratio: 630 / 530;
-		}
+		flex-grow: 1;
+	
 		&:hover{
-			img{
-				backdrop-filter: blur(10px);
-			}
-			.services__item__link__count{
-				background-color: $--pink;
-				border-color: $--pink;
-			}
-			.services__item__link__arrow{
+			.services__item__content-link span{
 				background-color: $--pink;
 				border-color: $--pink;
 			}
 		}
 		@media screen and (min-width:1024px) {
-			width: calc((100% / 2) - 40px);
+			width: calc((100% / 4) - 20px);
 		}
-		@media screen and (min-width:768px) {
-			border-radius: 200px 30px 30px 30px;
-			padding: 40px;
+		@media screen and (min-width:768px) and (max-width:1023.9px) {
+			width: calc((100% / 2) - 20px);
 		}
-		&:before{
-			content: '';
-			width: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			border-radius: inherit;
-			z-index: 2;
-			opacity: .8;
-background: #171717CC;
-		}
-		&__img{
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			border-radius: inherit;
-			z-index: 1;
+		
+		&__images{
+			
+			border-radius: 100px 30px 0px 0px;
 			object-fit: cover;
 			transition: .3s linear;
 			width: 100%;
 			height: 100%;
-			filter: grayscale(1);
-		}
-		&__link{
 			display: flex;
-			align-items: center;
-			gap: 13px;
-			margin-top: auto;
-			position: relative;
-			z-index: 2;
-			width: 100%;
-			&__count{
-				border-radius: 500px;
-				border: 1px solid var(--White, #FFF);
-				opacity: 0.7;
-				font-size: 14px;
-				font-style: normal;
-				font-weight: 700;
-				line-height: normal;
-				letter-spacing: 0.14px;
-				color: $--white;
-				padding: 8px 20px;
-				width: fit-content;
-				max-width: fit-content;
-				transition: .3s linear;
-			}
-			h3{
-				@include titleH3;
-				text-transform: uppercase;
-			}
-			&__arrow{
-				margin-left: auto;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				border: 1px solid $--white;
-				width: 48px;
-				height: 48px;
-				border-radius: 50%;
-				transition: .3s linear;
+			overflow: hidden;
+			min-height: 275px;
+			max-height: 275px;
+			height: 100%;
+			a{
+				display: flex;
+				border-radius: inherit;
+				// aspect-ratio: inherit;
+				min-width: 100%;
+				height: 100%;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: inherit;
+				}
 			}
 		}
+		&__content{
+			padding: 20px;
+			background-color: $--gray;
+			border-radius: 0px 0px 30px 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			// flex-grow: 1;
+			height: 100%;
+			&-link{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 13px;
+				width: 100%;
+				span{
+					border-radius: 50%;
+					border: 1px solid var(--White, #FFF);
+					width: 30px;
+					height: 30px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: .3s linear;
+				}
+				h3{
+					@include titleH3;
+					text-transform: uppercase;
+				}
+				&__arrow{
+					margin-left: auto;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					border: 1px solid $--white;
+					width: 48px;
+					height: 48px;
+					border-radius: 50%;
+					transition: .3s linear;
+				}
+			}
+			&-text{
+				p{
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 140%; /* 19.6px */
+					letter-spacing: 0.28px;
+				}
+			}
+			
+		}
+		
 	}
 }

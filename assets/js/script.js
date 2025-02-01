@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	openTabs();
 	prettyScroll();
 	animateText();
+	loadMoreFunc();
 	lightbox.init({
 		showImageNumberLabel: true,
 		disableScrolling: false,
@@ -66,7 +67,7 @@ const toggleMenu = () =>{
   });
 }
 const animateText = () =>{
-	const aboutText = document.querySelectorAll('.team__item__name, .team__item__position');
+	const aboutText = document.querySelectorAll('.team__item__name, .team__item__position, .team__item p, .team__item hr');
 	aboutText.forEach((text) => {
 		text.setAttribute('data-aos', 'fade-up');
 	})
@@ -301,25 +302,98 @@ const prettyScroll = () => {
 			});
 	});
 };
+const loadMoreFunc = () => {
+	const loadItemsWrap = document.querySelector('.reviews__items');
+	if (!loadItemsWrap) return;
 
-$(document).ready(function() {
-  // Ініціалізуємо кожен блок окремо
-  $(".team__item__img").each(function() {
-    const $slideshow = $(this); // Отримуємо поточний блок
+	const loadItems = loadItemsWrap.querySelectorAll('.reviews__item');
+	const loadMoreBtn = document.querySelector('.reviews__btn');
+	const initialItems = 2;
+	const itemsPerClick = 2;
+
+	loadItems.forEach((item, index) => {
+		if (index < initialItems) {
+			item.style.display = "flex";
+			item.style.opacity = "1"; 
+		} else {
+			item.style.display = "none";
+		}
+	});
+
+	if (loadItems.length <= initialItems) {
+		loadMoreBtn.style.display = 'none';
+	}
+
+	
+	loadMoreBtn.addEventListener("click", function (e) {
+		e.preventDefault();
+
+		let hiddenItems = Array.from(loadItems).filter(item => item.style.display === "none");
+
+		hiddenItems.slice(0, itemsPerClick).forEach((item, index) => {
+			setTimeout(() => {
+				slideDown(item, 400);
+			}, index * 100); 
+		});
+
+		if (hiddenItems.length <= itemsPerClick) {
+			loadMoreBtn.style.display = "none";
+		}
+	});
+};
+
+const slideDown = (element, duration = 400) => {
+	element.style.display = "flex";
+	element.style.overflow = "hidden";
+	element.style.maxHeight = "0px"; 
+	element.style.opacity = "0";
+
+	let start = null;
+	const targetHeight = element.scrollHeight; 
+
+	const step = (timestamp) => {
+		if (!start) start = timestamp;
+		let progress = timestamp - start;
+		let newHeight = Math.min((progress / duration) * targetHeight, targetHeight);
+		element.style.maxHeight = newHeight + "px";
+		element.style.opacity = (progress / duration).toFixed(2); 
+
+		if (progress < duration) {
+			requestAnimationFrame(step);
+		} else {
+			element.style.maxHeight = "";
+			element.style.opacity = "1";
+			element.style.overflow = "";
+		}
+	};
+
+	requestAnimationFrame(step);
+};
+
+
+
+
+
+
+
+// $(document).ready(function() {
+//   // Ініціалізуємо кожен блок окремо
+//   $(".team__item__img").each(function() {
+//     const $slideshow = $(this); // Отримуємо поточний блок
     
-    // Ініціалізація слайдера для кожного блоку
-    $slideshow.cycle({
-      timeout: 0, // Вимикаємо автоматичну зміну слайдів
-      fx: 'fade', // Ефект переходу (за бажанням)
-    });
+//     // Ініціалізація слайдера для кожного блоку
+//     $slideshow.cycle({
+//       timeout: 0, // Вимикаємо автоматичну зміну слайдів
+//       fx: 'fade', // Ефект переходу (за бажанням)
+//     });
     
-    // Знаходимо кнопку всередині батьківського блоку
-    const $nextButton = $slideshow.closest(".team__item").find(".next-button");
+//     // Знаходимо кнопку всередині батьківського блоку
+//     const $nextButton = $slideshow.closest(".team__item").find(".next-button");
     
-    // Прив'язуємо кнопку до відповідного слайдшоу
-    $nextButton.on("click", function() {
-      $slideshow.cycle("next"); // Перемикаємо на наступний слайд
-    });
-  });
-});
+//     // Прив'язуємо кнопку до відповідного слайдшоу
+//     $nextButton.on("click", function() {
+//       $slideshow.cycle("next"); // Перемикаємо на наступний слайд
+//     });
+//   });
+// });
 

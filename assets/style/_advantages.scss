@@ -14,12 +14,12 @@
 		flex-grow: 1;
 		width: 100%;
 		@media screen and (min-width:768px) {
-			padding: 40px;
+			padding: 30px;
 			
 		}
 
 		@media screen and (min-width:1024px) {
-			width: calc((100% / 3) - 20px);
+			width: calc((100% / 4) - 20px);
 		}
 		img{
 			width: 64px;
