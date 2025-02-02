@@ -53,7 +53,12 @@ justify-content: center;
 			margin-bottom: 20px;
 			@media screen and (min-width:1024px) {
 				font-size: 38px;
+				
 			}
+		}
+	&	.btn{
+			max-width: 320px;
+			padding: 25px 30px;
 		}
 		
 	}

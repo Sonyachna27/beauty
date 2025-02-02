@@ -243,7 +243,9 @@ body{
 		text-transform: uppercase;
 		a{
 			transition: .3s linear;
-			
+			&:nth-of-type(1){
+				text-decoration: underline;
+			}
 			&:hover{
 				color: $--pink;
 			}

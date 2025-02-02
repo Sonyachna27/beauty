@@ -49,6 +49,8 @@
 			transform: translate(-50%, -50%) rotate(-4.053deg);
 			position: absolute;
 			z-index: 5;
+			width: fit-content;
+			text-align: center;
 			@media screen and (max-width:768px) {
 				width: 80%;
 			}
